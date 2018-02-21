@@ -248,6 +248,7 @@ View(career_wins_1)
              geom_bar(stat = "identity") +
     theme(axis.text.x = element_text(angle = 60),
           plot.title = element_text(hjust = 0.5)) +
-    labs(x = "Driver", title = "Career Wins"))
+    labs(x = "Driver", title = "Career Wins")) +
+    coord_flip()
   
   
