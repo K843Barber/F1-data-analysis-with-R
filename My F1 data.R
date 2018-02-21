@@ -1,6 +1,8 @@
+#---- Load in following packages ----
 library(tidyverse)
 library(swirl)
 
+#---- Read in files ----
 circuits <- read.csv("circuits.csv", T, ",")
 constructorResults <- read.csv("constructorResults.csv", T, ",")
 constructors <- read.csv("constructors.csv", T, ",")
@@ -147,7 +149,7 @@ View(results2)
   geom_text(aes(label = Wins), vjust = -0.2))
 
 
-#---- Poles in a season bar graph: 1996 - 2001 ----
+#---- Poles in a season bar graph: 2003, 2009, 2011 ----
 
 qualifying1 <- left_join(races, qualifying, by = "raceId")
 qualifying2 <- left_join(qualifying1, drivers, by = "driverId")
@@ -188,7 +190,7 @@ qualifying2 <- left_join(qualifying1, drivers, by = "driverId")
   labs(x = "Driver", title = "2010 Poles") +
   geom_text(aes(label = Poles), vjust = -0.2))
 
-#---- Constructors ----
+#---- Constructors: 2007, 2010, 1998 ----
 constructor_points <- left_join(constructorResults, constructors, by = "constructorId")
 constructor_points1 <- left_join(constructor_points, races, by = "raceId")
 View(constructor_points1)  
@@ -220,7 +222,7 @@ View(constructor_points1)
   theme(plot.title = element_text(hjust = 0.5)) +
   labs(y = "Season Points", title = "1998 Team Points"))
 
-#----- Fastest Laps in a season ----
+#----- Fastest Laps in a season - WIP ----
 
 
 FL <- left_join(results, races, by = "raceId")
